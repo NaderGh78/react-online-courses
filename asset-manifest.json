@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/online-courses/static/css/main.fc89f4af.css",
+    "main.js": "/online-courses/static/js/main.3d55f4f5.js",
+    "index.html": "/online-courses/index.html",
+    "main.fc89f4af.css.map": "/online-courses/static/css/main.fc89f4af.css.map",
+    "main.3d55f4f5.js.map": "/online-courses/static/js/main.3d55f4f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc89f4af.css",
+    "static/js/main.3d55f4f5.js"
+  ]
+}
