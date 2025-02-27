@@ -1,0 +1,47 @@
+.teachers .teacher-box form input {
+    padding: 15px 0 15px 20px !important;
+    background-color: var(--white) !important;
+}
+
+.teachers .teacher-box .teachers-cards {
+    margin: 20px 0 70px;
+}
+
+.teachers .teacher-box .teachers-cards .teacher-single-card {
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: var(--white);
+    border-radius: 7px;
+}
+
+.teachers .teacher-box .teachers-cards ul {
+    margin: 15px 0 !important;
+}
+
+.teachers .teacher-box .teachers-cards ul li {
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+    color: var(--light-color);
+}
+
+.teachers .teacher-box .teachers-cards ul li span {
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.teachers .teacher-box .teachers-cards a.custom-link {
+    width: auto;
+    margin-top: 0;
+}
+
+/*====================================*/
+/*===========Responsive===============*/
+/*====================================*/
+
+@media only screen and (max-width:576px) {
+
+    .teachers .teacher-box .teachers-cards {
+        margin: 20px 0 40px;
+    }
+
+}

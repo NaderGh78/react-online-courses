@@ -1,0 +1,101 @@
+.side-bar {
+    position: fixed;
+    width: 22%;
+    height: 100vh;
+    background-color: var(--white);
+    border-right: var(--border);
+}
+
+.side-bar.full {
+    margin-left: -22%;
+}
+
+/* .side-bar-mini ul li */
+
+.side-bar .side-bar-profile,
+.side-bar-mini .side-bar-profile {
+    padding: 0 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.side-bar .side-bar-profile>div,
+.side-bar-mini .side-bar-profile>div {
+    width: 10rem;
+    height: 10rem;
+    margin: 50px auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.side-bar ul li,
+.side-bar-mini ul li {
+    margin-bottom: 5px;
+}
+
+.side-bar ul li a,
+.side-bar-mini ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: var(--light-color);
+}
+
+.side-bar ul li a.active,
+.side-bar-mini ul li a.active {
+    background-color: var(--light-bg);
+}
+
+.side-bar ul li a svg,
+.side-bar-mini ul li a svg {
+    font-size: 20px;
+    color: var(--main-color);
+    transition: all .3s;
+}
+
+.side-bar ul li a:hover svg,
+.side-bar-mini ul li a:hover svg {
+    margin-right: 5px;
+}
+
+/*-----------------------------------------------------------------*/
+/* style side bar on small devices
+/*-----------------------------------------------------------------*/
+
+.side-bar-mini {
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    margin-left: -300px;
+    background-color: var(--white);
+    border-right: var(--border);
+    z-index: 10;
+}
+
+.side-bar-mini span.close-side-bar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/*====================================*/
+/*===========Responsive===============*/
+/*====================================*/
+
+@media only screen and (max-width:1200px) {
+
+    /* hide the main side bar when the screen less than 1200px */
+    .side-bar {
+        display: none;
+    }
+
+    /* show the sidebar mini by adding this class */
+    .show-mini-sidebar {
+        margin-left: 0;
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, .5);
+    }
+}

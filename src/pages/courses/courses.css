@@ -1,0 +1,20 @@
+.courses-box {
+    margin-bottom: 70px;
+}
+
+/*====================================*/
+/*===========Responsive===============*/
+/*====================================*/
+
+@media only screen and (max-width:576px) {
+
+    .courses-box {
+        margin-bottom: 40px;
+    }
+
+    /* .courses-box .thumb-box {
+        max-height: 220px;
+        height: 240px;
+    } */
+
+}
