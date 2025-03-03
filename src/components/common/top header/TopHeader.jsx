@@ -1,10 +1,11 @@
 import './top-header.css';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { hidePopUp, showHidePopUp } from '../../../redux/slices/popUpSlice';
 import { showSidbar } from '../../../redux/slices/sideBarSlice';
 import { toggleTheme } from '../../../redux/slices/themeSlice';
+import useHideOnScroll from '../hooks/useHideOnScroll';
 import { FaBars, FaUser, FaRegSun, FaSistrix, FaMoon } from "react-icons/fa6";
 
 /*=========================================*/
@@ -33,8 +34,6 @@ const TopHeader = () => {
         dispatch(toggleTheme());
     }
 
-    /*=========================================*/
-
     // open user profile pop uop
     const openPopUpHandler = () => {
         dispatch(showHidePopUp());
@@ -44,68 +43,16 @@ const TopHeader = () => {
     const closePopUpHandler = () => {
         dispatch(hidePopUp());
     }
-    /*=========================================*/
-
-    // hide the [hidden form on small devices] when scroll page
-    const handleScroll = () => {
-
-        if (showFrom) {
-
-            const body = document.documentElement.scrollTop;
-
-            if (body > 10) {
-
-                setShowForm(false);
-
-            }
-
-        }
-    }
-
-    useEffect(() => {
-
-        if (showFrom) {
-            window.addEventListener("scroll", handleScroll);
-        }
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-
-    }, [showFrom]);
 
     /*=========================================*/
 
-    // hide pop up profile when scrolling
-    const hidePopUpByScroll = () => {
+    // custom hook to hide the form on small devices when scroll
+    useHideOnScroll(showFrom, setShowForm);
 
-        if (popUp) {
+    /*=========================================*/
 
-            const scrolled = document.documentElement.scrollTop;
-
-            // in case whe scroll the page , close side bar
-            if (scrolled > 10) {
-
-                dispatch(hidePopUp());
-
-            }
-
-        }
-
-    };
-
-    useEffect(() => {
-
-        // in case the popUp OPEN, CALL hidePopUpByScroll function when scrolling
-        if (popUp) {
-            window.addEventListener('scroll', hidePopUpByScroll);
-        }
-
-        return () => {
-            window.removeEventListener('scroll', hidePopUpByScroll);
-        };
-
-    }, [popUp]);
+    // custom hook to hide the user profile popup when scroll
+    useHideOnScroll(true, dispatch, hidePopUp);
 
     /*=========================================*/
 
