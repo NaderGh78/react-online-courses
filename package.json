@@ -2,7 +2,7 @@
   "name": "online-courses",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://NaderGh78.github.io/online-courses",
+  "homepage": "https://NaderGh78.github.io/react-online-courses",
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
     "@testing-library/jest-dom": "^5.17.0",
